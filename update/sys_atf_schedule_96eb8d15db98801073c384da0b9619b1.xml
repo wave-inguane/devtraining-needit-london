@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_schedule">
+    <sys_atf_schedule action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition><![CDATA[function testForWeekend(){
+	var run = true;
+	var rightNow = new GlideDateTime();
+	var day = rightNow.getDayOfWeekUTC();
+	
+	if(day == 6 | day == 7){
+		gs.info("Demo Schedule was not run because today is a weekend day");
+		run = false;
+	}
+}
+testForWeekend();]]></condition>
+        <conditional>true</conditional>
+        <description>This schedule will perform the following actions:
+
+Run suite 'NeedIt App' on a system with this configuration:
+Any browser on any version
+Any operating system on any version</description>
+        <name>Demo Schedule</name>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2019-10-03 23:58:13</run_start>
+        <run_time>1970-01-02 03:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[new global.ScheduledTestProcessor().executeScheduledSuites('96eb8d15db98801073c384da0b9619b1');]]></script>
+        <sys_class_name>sys_atf_schedule</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-10-03 23:58:33</sys_created_on>
+        <sys_id>96eb8d15db98801073c384da0b9619b1</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Demo Schedule</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_atf_schedule_96eb8d15db98801073c384da0b9619b1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-10-04 00:12:14</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sys_atf_schedule>
+</record_update>
